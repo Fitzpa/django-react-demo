@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { Header } from './components/layout/Header';
+import { Dashboard } from './components/leads/Dashboard';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 export const App = () => {
-    return (
-    <main>
-        <h1>Hello World</h1>
-    </main>
-    )
-}
+  return (
+    <Provider store={store}>
+      <main>
+        <Header />
+        <div className="container px-5">
+          <Dashboard />
+        </div>
+      </main>
+    </Provider>
+  );
+};
